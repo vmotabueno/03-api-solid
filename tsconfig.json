@@ -7,16 +7,16 @@
     // Environment Settings
     "module": "nodenext",
     "moduleResolution": "nodenext",
-    "target": "es2020",
+    "target": "es2022", // ES mais moderno e compatível com Node 18+
     "types": ["node"],
     "lib": ["esnext"],
 
-    // Other Outputs
+    // Output Options
     "sourceMap": true,
     "declaration": true,
     "declarationMap": true,
 
-    // Stricter Typechecking Options
+    // Stricter Typechecking
     "noUncheckedIndexedAccess": true,
     "exactOptionalPropertyTypes": true,
 
@@ -26,6 +26,14 @@
     "verbatimModuleSyntax": true,
     "isolatedModules": true,
     "noUncheckedSideEffectImports": true,
-    "skipLibCheck": true
-  }
+    "skipLibCheck": true,
+
+    // Import Extensions
+    "allowImportingTsExtensions": false // Evita conflito com noUncheckedIndexedAccess
+  },
+  "ts-node": {
+    "esm": true
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
 }
