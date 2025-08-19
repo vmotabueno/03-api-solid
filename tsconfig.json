@@ -1,39 +1,37 @@
 {
   "compilerOptions": {
-    // File Layout
-    "rootDir": "./src",
-    "outDir": "./dist",
+    /* Language and Environment */
+    "target": "es2020",
+    "lib": [
+      "es2020"
+    ],
+    // "jsx": "preserve", // Deixado como comentário, pois o arquivo do curso não o ativa.
+    // "experimentalDecorators": true, // Deixado como comentário.
+    // "emitDecoratorMetadata": true, // Deixado como comentário.
 
-    // Environment Settings
-    "module": "nodenext",
-    "moduleResolution": "nodenext",
-    "target": "es2022", // ES mais moderno e compatível com Node 18+
-    "types": ["node"],
-    "lib": ["esnext"],
-
-    // Output Options
+    /* Modules */
+    "module": "commonjs",
+    "moduleResolution": "node", // Usado para que o TypeScript saiba como resolver os módulos.
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    
+    /* Emit */
     "sourceMap": true,
-    "declaration": true,
-    "declarationMap": true,
+    // "outDir": "./dist", // Descomente se quiser manter a saída para a pasta 'dist'.
+    
+    /* Interop Constraints */
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
 
-    // Stricter Typechecking
-    "noUncheckedIndexedAccess": true,
-    "exactOptionalPropertyTypes": true,
-
-    // Recommended Options
+    /* Type Checking */
     "strict": true,
-    "jsx": "react-jsx",
-    "verbatimModuleSyntax": true,
-    "isolatedModules": true,
-    "noUncheckedSideEffectImports": true,
-    "skipLibCheck": true,
 
-    // Import Extensions
-    "allowImportingTsExtensions": false // Evita conflito com noUncheckedIndexedAccess
+    /* Completeness */
+    "skipLibCheck": true
   },
-  "ts-node": {
-    "esm": true
-  },
-  "include": ["src"],
-  "exclude": ["node_modules", "dist"]
+  "include": [
+    "src/**/*"
+  ]
 }
