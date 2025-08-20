@@ -1,37 +1,29 @@
 {
   "compilerOptions": {
     /* Language and Environment */
-    "target": "es2020",
-    "lib": [
-      "es2020"
-    ],
-    // "jsx": "preserve", // Deixado como comentário, pois o arquivo do curso não o ativa.
-    // "experimentalDecorators": true, // Deixado como comentário.
-    // "emitDecoratorMetadata": true, // Deixado como comentário.
+    "target": "ES2020",
+    "lib": ["ES2020", "DOM"],
 
     /* Modules */
-    "module": "commonjs",
-    "moduleResolution": "node", // Usado para que o TypeScript saiba como resolver os módulos.
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+
+    /* Emit */
+    "strict": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "outDir": "./build",
+
+    /* Paths (opcional) */
     "baseUrl": "./",
     "paths": {
       "@/*": ["./src/*"]
-    },
-    
-    /* Emit */
-    "sourceMap": true,
-    // "outDir": "./dist", // Descomente se quiser manter a saída para a pasta 'dist'.
-    
-    /* Interop Constraints */
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-
-    /* Type Checking */
-    "strict": true,
-
-    /* Completeness */
-    "skipLibCheck": true
+    }
   },
-  "include": [
-    "src/**/*"
-  ]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "build"]
 }
