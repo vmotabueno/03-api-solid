@@ -1,0 +1,15 @@
+services:
+  api-solid-pg:
+    image: postgres:latest
+    container_name: api-solid-pg-compose
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=meu_usuario
+      - POSTGRES_PASSWORD=minha_senha
+      - POSTGRES_DB=meu_banco
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
